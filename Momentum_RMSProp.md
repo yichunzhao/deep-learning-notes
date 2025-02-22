@@ -12,9 +12,9 @@ $$
 $$
 
 ### 🔹 Explanation:
-- **$v_t$**: Velocity term (tracks past gradients).  
-- **$\beta$**: Momentum coefficient (typically **0.9**).  
-- **$\alpha$**: Learning rate.  
+- **v_tv_t**: Velocity term (tracks past gradients).  
+- **\beta\beta**: Momentum coefficient (typically **0.9**).  
+- **\alpha\alpha**: Learning rate.  
 
 ### 🔹 Intuition:
 Think of **momentum** like rolling a ball down a hill—it picks up speed in the right direction, reducing oscillations.
@@ -26,6 +26,9 @@ RMSProp adjusts the learning rate dynamically for different parameters.
 
 ### 🔹 Formula:
 
+$E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2$
+
+
 $$
 E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2
 $$
@@ -36,8 +39,8 @@ $$
 
 ### 🔹 Explanation:
 - **$E[g^2]_t$**: Moving average of squared gradients.  
-- **$\beta$**: Decay factor (typically **0.9**).  
-- **$\epsilon$**: Small constant to prevent division by zero.  
+- **\beta\beta**: Decay factor (typically **0.9**).  
+- **\epsilon\epsilon**: Small constant to prevent division by zero.  
 
 ### 🔹 Intuition:
 RMSProp **reduces oscillations** and adapts learning rates dynamically, making it ideal for deep learning.
