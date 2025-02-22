@@ -27,7 +27,7 @@ $$
 $$
 
    - **\( v_t \)**: Velocity term (previous updates influence the new update).  
-   - **$\( \beta \)**: Momentum term (usually **0.9**).  
+   - **\( \beta \)**: Momentum term (usually **0.9**).  
    - **\( \alpha \)**: Learning rate.  
 
 ### 🔹 **Advantages:**  
@@ -50,14 +50,22 @@ RMSProp helps deal with **vanishing/exploding gradients** and adapts the learnin
 - This helps avoid large updates in steep directions and small updates in flat areas.  
 
 ### 🔹 **Formula:**  
-1. Compute the exponentially decaying squared gradient:  
+1. Compute the exponentially decaying squared gradient:
+
+   $$
    \[
    E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2
    \]
-2. Update weights:  
+   $$
+   
+3. Update weights:
+
+   $$
    \[
    \theta = \theta - \frac{\alpha}{\sqrt{E[g^2]_t + \epsilon}} \cdot \nabla J(\theta)
    \]
+   $$
+   
    - **\( E[g^2]_t \)**: Moving average of squared gradients.  
    - **\( \beta \)**: Decay factor (usually **0.9**).  
    - **\( \epsilon \)**: Small constant (to prevent division by zero).  
