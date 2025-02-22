@@ -19,8 +19,8 @@ $$
 $$
 
 - **\( v_t \)**: Velocity term.  
-- **\( beta \)**: Momentum term (typically **0.9**).  
-- **\( alpha \)**: Learning rate.  
+- **\( \beta \)**: Momentum term (typically **0.9**).  
+- **\( \alpha \)**: Learning rate.  
 
 ---
 
