@@ -25,6 +25,7 @@ Think of **momentum** like rolling a ball down a hill—it picks up speed in the
 RMSProp adjusts the learning rate dynamically for different parameters.
 
 ### 🔹 Formula:
+
 $$
 E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2
 $$
@@ -55,6 +56,3 @@ RMSProp **reduces oscillations** and adapts learning rates dynamically, making i
 
 ---
 
-### **References**
-- [Original RMSProp Paper](https://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf)
-- [Deep Learning Optimization](https://ruder.io/optimizing-gradient-descent/)
