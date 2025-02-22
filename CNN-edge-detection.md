@@ -48,6 +48,9 @@ CNNs **enhance basic shape components** as input to the neural network by detect
 ### **Example Use Cases**  
 - **OCR (Optical Character Recognition)** → Detects letter and number shapes.  
 - **Autonomous Driving** → Recognizes road signs and lane markings.
+- **Medical Imaging** → Identifies organ boundaries or tumor shapes.  
+
+In summary, CNNs **enhance basic shape components** by first detecting edges, then combining them into shapes, and finally recognizing complex patterns. This structured approach makes CNNs highly effective in visual tasks! 🚀
 
 Convolutional Neural Networks (CNNs):
 
@@ -60,6 +63,3 @@ Through the processes of convolution and pooling, CNNs significantly reduce the 
 This reduction decreases the computational load and memory requirements, making the model more efficient.
 It also helps mitigate the risk of overfitting by simplifying the data representation while retaining essential information.
 These benefits make CNNs particularly effective for tasks in computer vision, such as image classification, object detection, and facial recognition.
-- **Medical Imaging** → Identifies organ boundaries or tumor shapes.  
-
-In summary, CNNs **enhance basic shape components** by first detecting edges, then combining them into shapes, and finally recognizing complex patterns. This structured approach makes CNNs highly effective in visual tasks! 🚀
