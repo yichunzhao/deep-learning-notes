@@ -1,3 +1,4 @@
+![SGD Update Rule](https://latex.codecogs.com/png.latex?w%20%3D%20w%20-%20%5Calpha%20%5Cfrac%7B%5Cpartial%20L%7D%7B%5Cpartial%20w%7D)
 # Gradient Descent: Momentum & RMSProp
 
 ## 1. Gradient Descent with Momentum  
@@ -26,9 +27,12 @@ RMSProp adjusts the learning rate dynamically for different parameters.
 
 ### 🔹 Formula:
 
-$$
-E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2
-$$
+$$ v_t = \beta v_{t-1} + (1 - \beta) \nabla J(\theta) $$
+
+
+```latex
+$$ v_t = \beta v_{t-1} + (1 - \beta) \nabla J(\theta) $$
+```
 
 $$
 \theta = \theta - \frac{\alpha}{\sqrt{E[g^2]_t + \epsilon}} \cdot \nabla J(\theta)
@@ -43,6 +47,7 @@ $$
 RMSProp **reduces oscillations** and adapts learning rates dynamically, making it ideal for deep learning.
 
 ---
+
 
 ## 🚀 Momentum vs. RMSProp
 | Feature        | Momentum | RMSProp |
