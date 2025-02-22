@@ -11,7 +11,7 @@ $$
 $$
 
 ### 🔹 Explanation:
-- **v_tv_t**: Velocity term (tracks past gradients).  
+- **v_t**: Velocity term (tracks past gradients).  
 - **$\beta$**: Momentum coefficient (typically **0.9**).  
 - **$\alpha$**: Learning rate.  
 
