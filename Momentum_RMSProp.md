@@ -26,13 +26,8 @@ RMSProp adjusts the learning rate dynamically for different parameters.
 
 $$ v_t = \beta v_{t-1} + (1 - \beta) \nabla J(\theta) $$
 
-```latex
-$$ v_t = \beta v_{t-1} + (1 - \beta) \nabla J(\theta) $$
-```
 
-$$
-\theta = \theta - \frac{\alpha}{\sqrt{E[g^2]_t + \epsilon}} \cdot \nabla J(\theta)
-$$
+$$\theta = \theta - \frac{\alpha}{\sqrt{E[g^2]_t + \epsilon}} \cdot \nabla J(\theta)$$
 
 ### 🔹 Explanation:
 - **$E[g^2]_t$**: Moving average of squared gradients.  
