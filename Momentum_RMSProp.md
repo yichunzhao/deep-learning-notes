@@ -22,6 +22,10 @@ $$
 - **\( \beta \)**: Momentum term (typically **0.9**).  
 - **\( \alpha \)**: Learning rate.  
 
+- **$v_t$**: Velocity term.
+- **$\beta$**: Momentum term (typically **0.9**).
+- **$\alpha$**: Learning rate.
+
 ---
 
 ## **2. RMSProp (Root Mean Square Propagation)**  
