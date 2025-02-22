@@ -26,9 +26,6 @@ RMSProp adjusts the learning rate dynamically for different parameters.
 
 ### 🔹 Formula:
 
-$E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2$
-
-
 $$
 E[g^2]_t = \beta E[g^2]_{t-1} + (1 - \beta) \cdot (\nabla J(\theta))^2
 $$
