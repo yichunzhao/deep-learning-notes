@@ -10,16 +10,24 @@ Gradient Descent can be slow when encountering high curvature or local minima. *
 - This allows the optimizer to build **velocity** in directions where gradients are consistent, helping escape flat regions and reducing zig-zagging in high-curvature areas.  
 
 ### 🔹 **Formula:**  
-1. Compute the velocity update:  
+1. Compute the velocity update:
+
+$$
    \[
    v_t = \beta v_{t-1} + (1 - \beta) \cdot \nabla J(\theta)
    \]
-2. Update weights:  
+$$
+   
+3. Update weights:
+   
+$$
    \[
    \theta = \theta - \alpha v_t
    \]
+$$
+
    - **\( v_t \)**: Velocity term (previous updates influence the new update).  
-   - **\( \beta \)**: Momentum term (usually **0.9**).  
+   - **$\( \beta \)**: Momentum term (usually **0.9**).  
    - **\( \alpha \)**: Learning rate.  
 
 ### 🔹 **Advantages:**  
