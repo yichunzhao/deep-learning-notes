@@ -6,9 +6,7 @@ Gradient Descent with Momentum helps accelerate learning by smoothing updates an
 ### 🔹 Formula:
 $$v_t = \beta v_{t-1} + (1 - \beta) \cdot \nabla J(\theta)$$
 
-$$
-\theta = \theta - \alpha v_t
-$$
+$$\theta = \theta - \alpha v_t$$
 
 ### 🔹 Explanation:
 - **v_t**: Velocity term (tracks past gradients).  
