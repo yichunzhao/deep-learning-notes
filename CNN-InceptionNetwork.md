@@ -1,3 +1,12 @@
+# Question: is the Residual network(ResNets), major featuring ignoring some some layers in the NN? 
+
+The major feature of Residual Networks (ResNets) is the use of skip connections or shortcut connections that allow the network to bypass one or more layers. This helps in addressing the vanishing and exploding gradient problems that can occur in very deep networks. 
+
+Here are the key points:
+- Skip Connections: They allow the input from an earlier layer to be added to the output of a deeper layer, enabling the network to learn residual mappings instead of the original unreferenced mappings.
+- Improved Training: This architecture facilitates the training of much deeper networks (over 100 layers) without a significant loss in performance.
+
+
 # Question: how predictions made from intermediate layers can reducing overfitting
 
 Predictions made from intermediate layers can reduce overfitting in the following ways:
