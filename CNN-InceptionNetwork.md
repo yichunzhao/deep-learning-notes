@@ -1,3 +1,15 @@
+# Question: but the shortcut direction is forward, then how it play a role in the backpropagation ?
+Great question! The role of skip connections in backpropagation is crucial for effective training in Residual Networks (ResNets). Here's how it works:
+
+- Forward Pass: During the forward pass, the input from an earlier layer is added to the output of a deeper layer. This creates a new output that combines information from both paths.
+
+- Backpropagation: During backpropagation, the gradients are computed for each layer. The skip connection allows the gradient to flow back through the shortcut path directly to the earlier layer. This means that:
+
+  - The gradient from the deeper layer can be directly added to the gradient of the earlier layer.
+  - This addition helps in maintaining a stronger gradient signal, which reduces the risk of vanishing gradients.
+- Gradient Flow: The skip connections effectively create alternative paths for the gradient to flow, allowing the network to learn more effectively. This is particularly important in very deep networks, where gradients can otherwise diminish or explode.
+In summary, while the shortcut direction is forward during the forward pass, it plays a significant role in backpropagation by allowing gradients to flow more freely, enhancing the learning process.
+
 # Question: is the Residual network(ResNets), major featuring ignoring some some layers in the NN? 
 
 The major feature of Residual Networks (ResNets) is the use of skip connections or shortcut connections that allow the network to bypass one or more layers. This helps in addressing the vanishing and exploding gradient problems that can occur in very deep networks. 
