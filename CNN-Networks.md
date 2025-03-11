@@ -1,3 +1,15 @@
+# Comparing Conv. operations
+
+| Feature          | Normal Convolution | Pointwise Convolution (1x1) | Depthwise Convolution |
+|------------------|--------------------|---------------------------|-----------------------|
+| **Kernel Size** | NxN (N > 1)        | 1x1                       | NxN (per channel)     |
+| **Operation** | Combines spatial and channel information | Combines channel information only | Applies convolution independently to each input channel |
+| **Parameters** | C_in * C_out * N * N | C_in * C_out              | C_in * N * N          |
+| **Computational Cost** | High               | Low                       | Moderate              |
+| **Use Case** | Feature extraction, general feature mapping | Channel mixing, dimensionality reduction | Efficient spatial feature extraction, used in MobileNets |
+| **Output Channels** | C_out              | C_out                     | C_in (same as input)  |
+| **Channel Mixing** | Yes                | Yes                       | No (requires pointwise convolution for channel mixing) |
+
 # Question: but the shortcut direction is forward, then how it play a role in the backpropagation ?
 Great question! The role of skip connections in backpropagation is crucial for effective training in Residual Networks (ResNets). Here's how it works:
 
