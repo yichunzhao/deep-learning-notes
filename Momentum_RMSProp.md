@@ -18,15 +18,16 @@
 
 ## 3. **Mathematical Representation**
 ### **Gradient Descent (Batch Gradient Descent)**
+$$
 \[
 \theta = \theta - \alpha \cdot \frac{1}{m} \sum_{i=1}^{m} \nabla J(\theta, x_i)
-\]
+\]$$
 - Uses the full dataset (\( m \) samples) to compute the gradient.
 
 ### **Stochastic Gradient Descent (SGD)**
-\[
+$$\[
 \theta = \theta - \alpha \cdot \nabla J(\theta, x_i)
-\]
+\]$$
 - Uses only **one** random sample (\( x_i \)) at a time to update the parameters.
 
 ## 4. **Variants of Gradient Descent**
