@@ -4,17 +4,17 @@ Normalization is a crucial step in preparing training datasets for deep learning
 
 ## 1. **Min-Max Scaling**
    - Formula:  
-     \[
+     $$\[
      X' = \frac{X - X_{\min}}{X_{\max} - X_{\min}}
-     \]
+     \]$$
    - Scales features to a fixed range, typically [0, 1] or [-1, 1].
    - Sensitive to outliers.
 
 ## 2. **Z-Score Normalization (Standardization)**
    - Formula:  
-     \[
+     $$\[
      X' = \frac{X - \mu}{\sigma}
-     \]
+     \]$$
    - Centers the data around zero with unit variance.
    - Useful for algorithms assuming normally distributed data.
 
