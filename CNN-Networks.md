@@ -28,21 +28,21 @@ If a **standard Conv2D** layer has:
 - **Feature map size:** `H × W`  
 
 ### 1️⃣ **Standard Convolution (Regular Conv2D)**  
-\[
+$$\[
 K \times K \times C_{in} \times C_{out} \times H \times W
-\]  
+\]$$  
 💥 **Computationally expensive** (each filter processes **all channels**).  
 
 ### 2️⃣ **Depthwise Convolution**  
-\[
+$$\[
 K \times K \times C_{in} \times H \times W
-\]  
+\]$$  
 ⚡ **Computationally cheaper** (each filter processes **one channel only**).  
 
 ### 3️⃣ **Depthwise Separable Convolution** = Depthwise + Pointwise  
-\[
+$$\[
 (K \times K \times C_{in} + 1 \times 1 \times C_{in} \times C_{out}) \times H \times W
-\]  
+\]$$  
 ✔ **Balances efficiency & accuracy** by reducing computation while keeping useful information.  
 
 ---
