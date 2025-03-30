@@ -9,13 +9,14 @@ Even though input images typically have non-negative values (0-255), why do we s
 ### **1. Why Use ReLU in Convolutional Layers?**
 ReLU (**Rectified Linear Unit**) is defined as:
 
+$$
 \[
 f(x) = \max(0, x)
-\]
+\]$$
 
 This means:
-- If \( x > 0 \), **ReLU keeps it unchanged**.
-- If \( x \leq 0 \), **ReLU sets it to 0**.
+- If $$\( x > 0 \)$$, **ReLU keeps it unchanged**.
+- If $$\( x \leq 0 \)$$, **ReLU sets it to 0**.
 
 Although **input images don't have negative values**, the **convolution operation can produce negative values** due to:
 1. **Learned filter weights** (which can be positive or negative).
