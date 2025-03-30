@@ -1,3 +1,70 @@
+# Why Use ReLU Activation in Convolutional Neural Networks?
+
+## **Question:**
+Even though input images typically have non-negative values (0-255), why do we still need the ReLU activation function after a convolutional layer?
+
+---
+
+## **Answer:**
+### **1. Why Use ReLU in Convolutional Layers?**
+ReLU (**Rectified Linear Unit**) is defined as:
+
+\[
+f(x) = \max(0, x)
+\]
+
+This means:
+- If \( x > 0 \), **ReLU keeps it unchanged**.
+- If \( x \leq 0 \), **ReLU sets it to 0**.
+
+Although **input images don't have negative values**, the **convolution operation can produce negative values** due to:
+1. **Learned filter weights** (which can be positive or negative).
+2. **Summing across channels** (positive and negative values can cancel out).
+3. **Bias terms** (which can shift values below zero).
+
+---
+
+### **2. What Happens Without ReLU?**
+- The network would pass **both positive and negative values** forward.
+- Negative values **introduce unnecessary complexity**, making the network **harder to optimize**.
+- Non-linearity is reduced, making the network behave **almost like a simple linear transformation**.
+
+By using ReLU:
+- Negative values are removed → **simplifies optimization**.
+- Non-linearity is added → **enables deeper networks to learn complex patterns**.
+- Gradient flow is **more stable** → avoids vanishing gradients.
+
+---
+
+### **3. Example: Convolution Without ReLU**
+#### **Suppose we apply a 3×3 filter to an image**
+| Input Patch  | Kernel (Weights) | Output (Before ReLU) |
+|-------------|----------------|----------------|
+| **1 2 3**  | **1  0 -1** | **-6** |
+| **4 5 6**  | **1  0 -1** | **0** |
+| **7 8 9**  | **1  0 -1** | **6** |
+
+📌 **Without ReLU**, negative values like `-6` remain.  
+📌 **With ReLU**, negative values become `0`, making the network focus only on **strong activations**.
+
+---
+
+### **4. Does This Affect Image Details?**
+No! In fact, ReLU **helps the network detect important features more clearly** by ignoring weak or irrelevant signals.
+
+#### **Analogy: Edge Detection**
+- A **Sobel filter** (edge detector) produces both **positive and negative** values for edges.
+- If we use **ReLU**, only the **strongest edges** are kept, making **features clearer**.
+
+---
+
+### **5. Summary: Why ReLU After Convolution?**
+✅ **Eliminates unnecessary negative values**  
+✅ **Introduces non-linearity → Enables deep learning**  
+✅ **Improves gradient flow → Faster learning**  
+✅ **Filters out weak activations → Focuses on important features**  
+
+
 ## **The Concept of Fine-Tuning a Pre-Trained Model**
 
 ### **Key Steps in Fine-Tuning**
