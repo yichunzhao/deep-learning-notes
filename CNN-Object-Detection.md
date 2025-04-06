@@ -1,3 +1,83 @@
+# Question: so more than one positive pair is preferred, then how to select a corresponding negative photo? shall I select another reference person, who takes after the positive one?
+You're thinking like a pro already — and yes, **carefully selecting negative samples** can make a huge difference in Siamese Network training performance. Let's dig in:
+
+---
+
+## ✅ More Positive Pairs → Better Learning
+
+Like we said, the more **positive pairs** you can generate (same person, different photos), the better the network learns **intra-class similarity**.
+
+---
+
+## ❌ How to Select Negative Pairs — Smartly
+
+Negative pairs are just **different people**, but...
+
+> Randomly chosen negatives might be **too easy**, especially if the faces (or samples) are very different.
+
+### ✅ What You Want: **Hard Negatives**
+These are pairs that:
+- Come from **different people**
+- But **look similar** (similar lighting, pose, facial structure)
+
+This forces the network to **really learn fine-grained differences**.
+
+---
+
+### 🔍 Strategies for Choosing Negative Pairs
+
+| Strategy | Description | Use Case |
+|----------|-------------|----------|
+| **Random Negatives** | Randomly select from a different identity | Good for early training |
+| **Semi-Hard Negatives** | Negatives with embedding distance close to positives | Used in Triplet Loss and advanced Siamese setups |
+| **Visually Similar Negatives** | Pick a different person who looks similar (e.g., same age, gender, ethnicity) | Boosts discriminative power |
+| **Dynamic Hard Mining** | During training, track distances and select the hardest negatives | Advanced, used for large-scale datasets |
+
+---
+
+### 🧠 Your Idea: Pick Someone Who *Takes After* the Positive One
+Yes — that’s called **hard negative mining** (manually or automatically).
+
+If you can:
+- Use **metadata** (age, gender)
+- Use a **pretrained model** (like FaceNet or ArcFace) to **find people with similar embeddings**, and use those for negative samples.
+
+This will train the model to distinguish **"lookalikes"**, which is what makes it robust.
+
+---
+
+### 📈 Example Scenario:
+
+Say you're training on faces.
+
+- **Person A** has 3 images → form 3 positive pairs.
+- Now pick **Person B** for negatives:
+  - If B looks very different → easy negative
+  - If B looks like A (e.g., sibling) → hard negative ✅
+
+You could even rank negative candidates by cosine similarity in feature space if you're using a pretrained embedding model.
+
+---
+
+### ⚠️ One Caution:
+If you make all negatives **too hard too early**, the network might **fail to converge**.
+
+🔄 So usually:
+1. Start with **random negatives**
+2. Then **gradually mix in harder negatives**
+
+---
+
+### 📦 TL;DR
+
+- Yes, more positive pairs = good.
+- Choose **negatives that are visually similar** to positives — these are *hard negatives*.
+- Start with easy negatives, then mix in hard ones as training progresses.
+- You can even precompute "visual similarity" using an embedding model.
+
+---
+
+Let me know if you want code to auto-select hard negatives or simulate this on face data.
 # Understanding Transposed Convolution in U-Net
 
 ## Question:
