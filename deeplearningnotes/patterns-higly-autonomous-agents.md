@@ -63,3 +63,45 @@ The lecture showed two ways agents can work together, which defines the **commun
 ### ✅ Conclusion
 
 Building a multi-agent system allows you to build **reusable** and **highly specialized** agents that collectively solve complex problems more effectively than a single, generalized agent. Designing the right **communication pattern** is key to success.
+
+That's the key question in multi-agent systems! While they may share the **same core LLM model**, they are fundamentally different because of three strategic factors: **Role Prompting, Specialized Toolsets, and Memory/Context.**
+
+May using the same LLM, then what makes the difference:
+
+---
+
+## 🎭 1. Role Prompting (The Persona)
+
+The primary differentiator is the **System Prompt** (or instruction) given to the LLM instance. This prompt defines the agent's entire persona and purpose.
+
+* **Instruction:** It explicitly tells the LLM what it is, its expertise, and how it should behave.
+* **Focus:** This forces the massive, general-purpose LLM to narrow its focus and adopt a specific mindset, drawing only on the knowledge and logic relevant to that role.
+    * Example: A prompt for a **"Researcher Agent"** instructs the LLM to be *objective, factual, and thorough*, prioritizing information retrieval.
+    * Example: A prompt for a **"Writer Agent"** instructs the LLM to be *creative, concise, and focused on marketing copy*, prioritizing language generation.
+
+This is why, even though both agents use the same underlying "brain," the Researcher will naturally spend tokens thinking about web search queries, while the Writer will spend tokens thinking about tone and formatting.
+
+---
+
+## 🛠️ 2. Specialized Toolsets (The Capabilities)
+
+Each agent is only given access to the **external tools** (APIs or functions) it needs to perform its job.
+
+* **Enforcement:** This physically limits what the agent can *do* and guides its planning. The LLM is forced to consider a plan that only involves its available tools.
+* **Examples:**
+    * The **Researcher Agent** is given the `web_search()` tool.
+    * The **Graphic Designer Agent** is given the `generate_image()` and `execute_code()` (for charts) tools.
+    * The **Writer Agent** may be given no tools at all, as its task is pure text generation.
+
+By limiting the available functions, the planning and reasoning of the underlying LLM are fundamentally altered for that specific role. 
+
+---
+
+## 🧠 3. Context and State (The Memory)
+
+In a multi-agent workflow, the agents often have different **memory or context**.
+
+* **Input Context:** An agent only receives the specific, relevant input from the previous agent or the supervisor. It doesn't have the full conversation history or the previous agent's internal thought process. This limits the context the LLM has to reason over.
+* **State:** The state, or current task progress, is unique to that agent's current step. This further reinforces the distinction by making each agent focus only on its assigned sub-goal.
+
+In essence, you are not just using the same LLM multiple times; you are creating **multiple instances of a specialized thinking machine** by wrapping the LLM in a unique set of **instructions, permissions (tools), and data inputs.**
